@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
+--
+-- Host: localhost    Database: dataweb
+-- ------------------------------------------------------
+-- Server version	9.0.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `images` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `idProduct` int NOT NULL,
+  `imageData` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idProduct` (`idProduct`),
+  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`idProduct`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=298 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images`
+--
+
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (132,44,'1735387762935_nam-bao-ngu-xam-tuoi-06.jpg'),(133,44,'1735387762939_nam-bao-ngu-xam-tuoi-ngon-0.jpg'),(134,44,'1735387762940_nam-bao-ngu-xam-tuoi-ngon-02.jpg'),(135,44,'1735387762942_nam-bao-ngu-xam-tuoi-ngon-01.jpg'),(140,46,'1735388124771_nam-dui-ga-tuoi-loai-1-2-430x430.jpg'),(141,46,'1735388124774_nam-dui-ga-tuoi-loai-1-3-430x430.jpg'),(142,46,'1735388124775_nam-dui-ga-tuoi-loai-1-6-430x430.jpg'),(143,46,'1735388124777_nam-dui-ga-tuoi-loai-1-9-430x430.jpg'),(144,47,'1735389841193_nam-huong-tuoi-nam-dong-co-tuoi-1-430x430.jpg'),(145,47,'1735389841197_nam-huong-tuoi-nam-dong-co-tuoi-ngon-430x430.jpg'),(146,47,'1735389841198_nam-huong-tuoi-nam-dong-co-tuoi-ngon-2-430x430.jpg'),(147,47,'1735389841199_nam-huong-tuoi-nam-dong-co-tuoi-200gr-1-430x430.jpg'),(152,49,'1735482997932_nam-rom-tuoi-01-150x150.jpg'),(153,49,'1735482997939_nam-rom-tuoi-02-150x150.jpg'),(154,49,'1735482997941_nam-rom-tuoi-03-150x150.jpg'),(155,49,'1735482997942_nam-rom-tuoi-04-150x150.jpg'),(156,50,'1735642893351_nam-moi-den-tuoi-4.jpg'),(157,50,'1735642893357_nam-moi-den-tuoi-1-1-430x430.jpg'),(158,50,'1735642893358_nam-moi-den-tuoi-5-430x430.jpg'),(159,50,'1735642893358_nam-moi-den-tuoi-2-1-430x430.jpg'),(164,52,'1735643142778_nam-hoang-kim-tuoi.jpg'),(165,52,'1735643142782_nam-hoang-kim-tuoi-ngon-4-300x300.jpg'),(166,52,'1735643142783_nam-hoang-kim-tuoi-ngon-1-300x300.jpg'),(167,52,'1735643142784_nam-hoang-kim-tuoi-1-430x430.jpg'),(168,53,'1735643591341_nam-mo-nau-tuoi-1.jpg'),(169,53,'1735643591346_nam-mo-nau-tuoi-ngon-1-430x430.jpg'),(170,53,'1735643591347_nam-mo-nau-tuoi-ngon-4-430x430.jpg'),(171,53,'1735643591348_nam-mo-nau-tuoi-ngon-2-430x430.jpg'),(172,54,'1735644830383_nam-dui-ga-baby-tuoi-5.jpg'),(173,54,'1735644830391_nam-dui-ga-baby-tuoi-6-430x430.jpg'),(174,54,'1735644830392_nam-dui-ga-baby-tuoi-4-430x430.jpg'),(175,54,'1735644830393_nam-dui-ga-baby-tuoi-2-430x430.jpg'),(176,55,'1735645770116_nam-linh-chi-nau-tuoi-han-quoc-0.jpg'),(177,55,'1735645770124_nam-linh-chi-nau-tuoi-1-430x430.jpg'),(178,55,'1735645770124_nam-linh-chi-nau-tuoi-3-430x430.jpg'),(179,55,'1735645770126_nam-linh-chi-nau-tuoi-2-430x430.jpg'),(180,56,'1735646340837_nam-kim-cham-tuoi-vn-5.jpg'),(181,56,'1735646340842_nam-kim-cham-tuoi-vn-1-430x430.jpg'),(182,56,'1735646340843_nam-kim-cham-tuoi-vn-3-430x430.jpg'),(183,56,'1735646340843_nam-kim-cham-tuoi-vn-0-430x430.jpg'),(184,57,'1735646776412_nam-linh-chi-trang-tuoi-han-quoc-0.jpg'),(185,57,'1735646776417_nam-linh-chi-trang-tuoi-430x430.jpg'),(186,57,'1735646776417_nam-linh-chi-trang-tuoi-1-430x430.jpg'),(187,57,'1735646776419_nam-linh-chi-trang-tuoi-3-430x430.jpg'),(188,58,'1735894284112_nam-hau-thu-tuoi-2.1.jpg'),(189,58,'1735894284117_nam-hau-thu-tuoi-1.1-430x430.jpg'),(190,58,'1735894284117_nam-hau-thu-tuoi-3.1-430x430.jpg'),(191,58,'1735894284118_nam-hau-thu-tuoi-6.1-Copy-430x430.jpg'),(192,59,'1735898751794_nam-rom-kho-2.jpg'),(193,59,'1735898751800_nam-rom-kho-01-1-430x430.jpg'),(194,59,'1735898751801_nam-rom-kho-04-430x430.jpg'),(195,59,'1735898751802_nam-rom-kho-500gr-300x300.jpg'),(196,60,'1735899680246_nam-huong-kho-nam-dong-co-kho-2.jpg'),(197,60,'1735899680251_nam-huong-kho-3-1-430x430.jpg'),(198,60,'1735899680252_nam-huong-kho-1-1-430x430.jpg'),(199,60,'1735899680253_nam-huong-kho-nam-dong-co-kho-430x430.jpg'),(200,61,'1735900374371_dong-trung-ha-thao-kho-say-thang-hoa-10gr.jpg'),(201,61,'1735900374377_dong-trung-ha-thao-kho-say-thang-hoa-10gr-5-430x430.jpg'),(202,61,'1735900374378_dong-trung-ha-thao-kho-say-thang-hoa-10gr-6-430x430.jpg'),(203,61,'1735900374379_dong-trung-ha-thao-kho-say-thang-hoa-10gr-3-430x430.jpg'),(204,62,'1736127909430_nam-bung-de-kho-nam-morel-kho-8.jpg'),(205,62,'1736127909443_nam-bung-de-kho-nam-morel-kho-10-430x430.jpg'),(206,62,'1736127909445_nam-bung-de-kho-nam-morel-kho-9-430x430.jpg'),(207,62,'1736127909446_nam-bung-de-kho-nam-morel-kho-05-430x430.jpg'),(208,64,'1736128322402_cha-bong-nam-huong-nguyen-vi-150gr-1-430x430.jpg'),(209,64,'1736128322407_cha-bong-nam-huong-nguyen-vi-150gr-3-430x430.jpg'),(210,64,'1736128322410_cha-bong-nam-huong-nguyen-vi-150gr-1.jpg'),(211,64,'1736128322413_cha-bong-nam-huong-nguyen-vi-150gr-2-430x430.jpg'),(212,68,'1737010643828_chan-nam-huong-kho-01-430x430.jpg'),(213,68,'1737010643839_chan-nam-huong-kho-02-430x430.jpg'),(214,68,'1737010643840_chan-nam-huong-kho-05.jpg'),(215,68,'1737010643842_chan-nam-huong-kho-6-430x430.jpg'),(216,69,'1737010965775_nam-hau-thu-kho-nam-dau-khi-kho-01.jpg'),(217,69,'1737010965781_nam-hau-thu-kho-nam-dau-khi-kho-02-430x430.jpg'),(218,69,'1737010965784_nam-hau-thu-kho-nam-dau-khi-kho-03-430x430.jpg'),(219,69,'1737010965787_nam-hau-thu-kho-nam-dau-khi-kho-05-430x430.jpg'),(220,70,'1737011417795_nam-bao-ngu-kho-9.jpg'),(221,70,'1737011417801_nam-bao-ngu-kho-10-430x430.jpg'),(222,70,'1737011417803_nam-bao-ngu-xam-kho-4-300x300.jpg'),(223,70,'1737011417809_nam-bao-ngu-xam-kho-0-300x300.jpg'),(224,71,'1737011833319_nam-tuyet-kho-02.jpg'),(225,71,'1737011833324_nam-tuyet-kho-01-430x430.jpg'),(226,71,'1737011833325_nam-tuyet-kho-03-430x430.jpg'),(227,71,'1737011833326_nam-tuyet-kho-04-430x430.jpg'),(228,72,'1737012712822_nam-meo-soi-moc-nhi-thai-soi-5.jpg'),(229,72,'1737012712827_nam-meo-soi-moc-nhi-thai-soi-1-430x430.jpg'),(230,72,'1737012712828_nam-meo-soi-moc-nhi-thai-soi-2-430x430.jpg'),(231,72,'1737012712830_nam-meo-soi-moc-nhi-thai-soi-3-430x430.jpg'),(232,73,'1737012894627_nam-moi-den-say-thang-hoa-1.jpg'),(233,73,'1737012894632_nam-moi-den-say-thang-hoa-3-430x430.jpg'),(234,73,'1737012894634_nam-moi-den-say-thang-hoa-2-430x430.jpg'),(235,73,'1737012894635_nam-moi-den-say-thang-hoa-4-430x430.jpg'),(236,74,'1737013113098_nam-so-trang-kho-3.jpg'),(237,74,'1737013113102_nam-so-trang-kho-4-430x430.jpg'),(238,74,'1737013113103_nam-so-trang-kho-2-430x430.jpg'),(239,74,'1737013113105_nam-so-trang-kho-1-430x430.jpg'),(240,75,'1737013254429_bao-tu-nam-linh-chi-do-0.jpg'),(241,75,'1737013254432_bao-tu-nam-linh-chi-do-50gr-1-430x430.jpg'),(242,75,'1737013254436_bao-tu-nam-linh-chi-do-50gr-4-430x430.jpg'),(243,75,'1737013254437_bao-tu-nam-linh-chi-do-50gr-5-430x430.jpg'),(244,76,'1737013688579_bot-nam-meo-kho-0-430x430.jpg'),(245,76,'1737013688585_bot-nam-meo-kho-1-430x430.jpg'),(246,76,'1737013688587_bot-nam-meo-kho-2.jpg'),(247,76,'1737013688590_bot-nam-meo-kho-3-430x430.jpg'),(248,77,'1737014189992_bot-nam-rom-50gr-430x430.jpg'),(249,77,'1737014189999_bot-nam-rom-100gr-4-430x430.jpg'),(250,77,'1737014190000_bot-nam-rom-200gr-1.jpg'),(251,77,'1737014190003_bot-nam-rom-430x430.jpg'),(252,78,'1737014679144_cha-bong-nam-huong-chay-toi-2.jpg'),(253,78,'1737014679153_cha-bong-nam-huong-chay-toi-150gr-1-430x430.jpg'),(254,78,'1737014679155_cha-bong-nam-huong-chay-toi-150gr-2-430x430.jpg'),(255,78,'1737014679156_cha-bong-nam-huong-chay-toi-150gr-3-430x430.jpg'),(256,79,'1737014849812_bot-nam-bao-ngu-xam-0-430x430.jpg'),(257,79,'1737014849815_bot-nam-bao-ngu-xam-1-2.jpg'),(258,79,'1737014849817_bot-nam-bao-ngu-xam-2-430x430.jpg'),(259,79,'1737014849818_bot-nam-bao-ngu-xam-3-430x430.jpg'),(260,80,'1737015174995_20220604_212908-01.jpg'),(261,80,'1737015174999_nam-linh-chi-do-thai-lat-0-430x430.jpg'),(262,80,'1737015175002_nam-linh-chi-do-thai-lat-02-430x430.jpg'),(263,80,'1737015175003_nam-linh-chi-do-thai-lat-03-430x430.jpg'),(264,81,'1737015484026_bot-nam-linh-chi-do-1.jpg'),(265,81,'1737015484030_bot-nam-linh-chi-do-2-430x430.jpg'),(266,81,'1737015484032_bot-nam-linh-chi-do-4-430x430.jpg'),(267,81,'1737015484034_bot-nam-linh-chi-do-3-430x430.jpg'),(268,82,'1737015780542_nam-linh-chi-do-nguyen-tai-50gr-3.jpg'),(269,82,'1737015780548_nam-linh-chi-do-nguyen-tai-3-430x430.jpg'),(270,82,'1737015780549_nam-linh-chi-do-nguyen-tai-2-430x430.jpg'),(271,82,'1737015780551_nam-linh-chi-do-nguyen-tai-1-430x430.jpg'),(272,83,'1737016036561_nam-tam-truc-kho-nam-truc-sanh-kho-6.jpg'),(273,83,'1737016036565_nam-tam-truc-kho-nam-truc-sanh-kho-9-430x430.jpg'),(274,83,'1737016036566_nam-tam-truc-kho-nam-truc-sanh-kho-1-430x430.jpg'),(275,83,'1737016036567_nam-tam-truc-kho-nam-truc-sanh-kho-8-430x430.jpg'),(276,84,'1737016225882_nam-moi-kho-2.jpg'),(277,84,'1737016225887_nam-moi-kho-1-430x430.jpg'),(278,84,'1737016225889_nam-moi-kho-3-430x430.jpg'),(279,84,'1737016225890_nam-moi-kho-say-thang-hoa-430x430.jpg'),(288,87,'nam-moi-tuoi-tu-nhien-1-430x430.jpg'),(289,87,'nam-moi-tuoi-tu-nhien-2-150x150.jpg'),(290,87,'nam-moi-tuoi-tu-nhien-4.jpg'),(291,87,'nam-moi-tuoi-tu-nhien-150x150.jpg'),(292,89,'nam-chan-dai-tuoi-nam-loa-ken-tuoi-01.jpg'),(293,89,'nam-chan-dai-tuoi-nam-loa-ken-tuoi-2-430x430.jpg'),(294,89,'nam-chan-dai-tuoi-nam-loa-ken-tuoi-3-150x150.jpg'),(295,89,'nam-chan-dai-tuoi-nam-loa-ken-tuoi-3-150x150.jpg'),(296,89,'nam-chan-dai-tuoi-nam-loa-ken-tuoi-01.jpg'),(297,89,'nam-chan-dai-tuoi-nam-loa-ken-tuoi-3-150x150.jpg');
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-04-23 17:51:16

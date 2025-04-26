@@ -1,0 +1,639 @@
+*{
+    font-family: sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+body, html, head{
+    padding: 0;
+    margin: 0;
+}
+
+
+.menuSelect{
+    margin: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(254, 235,205 );
+    padding: auto;
+}
+.menuSelect .menu{
+    margin: 0;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+
+    vertical-align: middle;
+    text-align: center;
+    padding: 0;
+}
+.menu .ulmenu{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    list-style-type: none;
+}
+.ulmenu .limenu{
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 33.33%;
+}
+.limenu .amenu{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+
+    color: rgb(83, 78, 73);
+
+    padding-top: 30px;
+}
+.amenu strong{
+    font-size: 25px;
+
+}
+.amenu::after{
+    content: "";
+}
+.amenu:hover strong{
+    color: rgb(27, 27, 27);
+}
+.activemenu strong{
+    color: rgb(27, 27, 27);
+    border-bottom: 2px solid rgb(157, 56, 27);
+}
+.content{
+    width: 90%;
+    margin: 0;
+
+
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content .khuyenmai{
+    margin-top: 30px;
+    width: 100%;
+    height: 200px;
+
+    margin-left: 150px;
+}
+.khuyenmai .pkhuyenmai{
+    width: 40%;
+    height: 30px;
+    margin: 0;
+    color: black;
+    font-size: 20px;
+
+}
+.pkhuyenmai b{
+    color:rgb(157, 56, 27) ;
+    font-size:16px;
+    cursor: pointer;
+
+
+}
+.khuyenmai .inputkhuyenmai{
+    width: 50%;
+    height: 130px;
+    border: 2px solid rgb(231,231,231);
+    margin: 0;
+    margin-top: 20px ;
+    padding: auto;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+#newBox.active {
+    height: auto;
+    opacity: 1;
+    padding: 20px;
+}
+.inputkhuyenmai .textinput{
+    width: 100%;
+    height: 40px;
+
+    margin: 0;
+    padding-top: 15px;
+    font-size: 15px;
+}
+.inputkhuyenmai .form{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+
+    padding: 0;
+}
+.form .inputvaluekhuyenmai{
+    width: 50%;
+    height: 40px;
+    margin: 0;
+    border: 2px solid rgba(128, 128, 128, 0.47);
+    padding: 0;
+    padding-top: 10px;
+    resize: none;
+    font-size: 15px;
+    float: left;
+    border-radius: 5px;
+}
+.form .button{
+    float: left;
+    width: 20%;
+    height: 40px;
+    margin: 0;
+    margin-left: 20px;
+    border: 1px solid rgb(157, 56, 27);
+    border-radius: 5px;
+    padding: auto;
+    background-color: rgb(157, 56, 27);
+    font-size: 15px;
+    color: white;
+}
+.khuyenmai .contentproduct{
+
+    width: 90%;
+    margin: 0;
+    margin-top: 20px;
+    height: 1000px;
+    padding: auto;
+
+}
+.inforkhuyenmai{
+    width: 70%;
+    height: 50px;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: rgb(216, 164, 65);
+    border-radius: 3px;
+    padding: 0;
+}
+.inforkhuyenmai .inforchitiet{
+    width:95% ;
+    height: 50px;
+    margin: 0;
+
+    float: left;
+
+}
+.inforchitiet p{
+    margin: 0;
+    width: 100%;
+    height: 50px;
+
+    font-size: 15px;
+    padding: 10px;
+    padding-top: 15px;
+    color: white;
+}
+.inforchitiet p a{
+    margin: 0;
+    text-decoration: dotted;
+
+    font-size: 15px;
+
+
+    color: white;
+}
+.inforkhuyenmai .icon{
+    width: 5%;
+    height: 50px;
+    margin: 0;
+    float: left;
+
+}
+.icon i{
+    padding: 10px;
+    padding-top: 13px;
+    margin: 0;
+    width: 100%;
+    height: 50px;
+
+    font-size: 20px;
+    color: white;
+}
+.contentproduct .information{
+    width:  100%;
+    height :1000px;
+    margin: 0;
+    padding: auto;
+
+}
+.information .informationleft{
+    width: 48.5%;
+    height: 1000px;
+    margin: 0;
+    float: left;
+    padding: auto;
+
+}
+.information .informationright{
+    width: 48.5%;
+    height: 1350px;
+    margin: 0;
+    float: right;
+    padding: auto;
+    background-color: rgb(245,245,245);
+}
+.informationleft .inforfreeship{
+    width: 100%;
+    height: 100px;
+    border: 1px dashed rgb(208, 208, 208);
+    padding: auto;
+    margin: 0;
+    padding-left: 30px;
+}
+.inforfreeship .p{
+    font-size: 15px;
+    color: rgb(123, 123, 123);
+
+}
+.inforfreeship .rowfreeship{
+    width: 80%;
+    height: 10px;
+    background-color: rgb(236, 236, 236);
+
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    display: inline-block;
+    border-radius: 5px;
+}
+.rowfreeship .rowcheck{
+    width: 20%;
+    height: 10px;
+    margin: 0;
+    background-image: linear-gradient(to right,red, yellow,red);
+    border-radius: 5px;
+}
+
+.inforthanhtoanuser .p{
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(157, 56, 27);
+
+}
+.inforthanhtoanuser .form{
+    width: 100%;
+    height: 300px;
+    margin: 0;
+
+    margin-top: 20px;
+
+}
+.form .inputname{
+    width: 100%;
+    margin: 0;
+    margin-top: 5px;
+    height: 50px;
+    border: 2px solid rgb(208, 208, 208);
+    border-radius: 5px;
+
+    font-size: 15px;
+
+}
+.form .namelabel{
+    font-size: 15px;
+    padding-top: 10px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+.namelabel i{
+    margin-left: 5px;
+    color: red;
+}
+.form .formleft{
+    width: 48%;
+    height: 280px;
+    float: left;
+    margin: 0;
+
+    padding: auto;
+}
+.form .formright{
+    width: 48%;
+    height: 280px;
+    float: right;
+    margin: 0;
+    padding: auto;
+
+}
+.form .textareaform{
+    width: 100%;
+    height: 200px;
+    resize: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 2px solid rgb(208, 208, 208);
+
+}
+.informationright .donhang{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(245,245,245);
+    padding: auto;
+    margin: 0;
+    font-size: 25px;
+    color: rgb(157, 56, 27);
+    display: inline-block;
+    text-align: center;
+    padding-top: 40px;
+
+}
+.informationright .donhangdetails{
+    width: 90%;
+    height: 500px;
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    border: 2px solid rgb(208, 208, 208);
+    padding-right: 10px;
+    background-color: white;
+    border-radius: 4px;
+}
+.donhangdetails .title{
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(221, 221, 221) ;
+    margin: 0;
+    padding: auto;
+}
+.titleproduct{
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    padding-top: 20px;
+    display: inline-block;
+    position: relative;
+}
+.donhangdetails .priceproduct{
+    width: 100%;
+    height: 110px;
+    border-bottom: 2px solid rgb(221, 221, 221) ;
+    margin: 0;
+    padding: auto;
+
+}
+.priceproduct .icondelete{
+
+    width: 20px;
+    height: 20px;
+
+    padding-left:2px ;
+    margin: 0;
+    margin-top: 40px;
+    float: left;
+    cursor: pointer;
+
+
+
+}
+ .imgproduct img{
+
+    width: 10px;
+    height: 10px;
+    margin: 0;
+     display: block;
+
+
+    float: left;
+
+
+}
+.priceproduct .inforproduct{
+    width: 35%;
+    height: 110px;
+    margin: 0;
+    padding-left: 10px;
+    float: left;
+
+}
+.inforproduct .title{
+    color: rgb(157, 56, 27);
+
+    height: 30px;
+    padding-top: 5px;
+    font-size: 14px;
+}
+.inforproduct .idproduct{
+    color: rgb(123, 123, 123);
+
+    height: 30px;
+    padding-top: 5px;
+    font-size: 14px;
+    margin: 0;
+}
+.inforproduct .changeProduct{
+    width: 50%;
+    height: 40px;
+    margin: 0;
+    border: 2px solid rgb(208, 208, 208);
+    padding: auto;
+    border-radius: 5px;
+}
+.changeProduct .sub{
+    float: left;
+    border-right: 2px solid rgb(208, 208, 208);
+    width: 20%;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 10px;
+    transition-duration: 0.3s;
+}
+.changeProduct .add{
+    float: right;
+    border-left: 2px solid rgb(208, 208, 208);
+    width: 20%;
+    height: 38px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 9px;
+    transition-duration: 0.3s;
+}
+.changeProduct .count{
+    width: 60%;
+    height: 38px;
+    text-align: center;
+    padding-top: 10px;
+    float: left;
+
+}
+.add:hover{
+    background-color: rgb(157, 56, 27);
+}
+.sub:hover{
+    background-color: rgb(157, 56, 27);
+}
+.priceproduct .totalprice{
+    width: 41%;
+    height: 110px;
+    margin: 0;
+    padding: auto;
+    float: left;
+
+}
+.totalprice .pricesp{
+    color: rgb(123, 123, 123);
+    text-align: right;
+    font-size: 17px;
+    padding-top: 25px;
+    padding-right: 10px;
+}
+.donhangdetails .tamtinhprice{
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: auto;
+    border-bottom: 2px solid rgb(208, 208, 208);
+    padding-right: 10px;
+}
+.donhangdetails .giaohang{
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: auto;
+    border-bottom: 2px solid rgb(208, 208, 208);
+    padding-right: 10px;
+}
+.note{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(255, 201, 83);
+    margin: 0;
+    padding: auto;
+    position: absolute;
+
+    border: 1px dashed red;
+    border-radius: 4px;
+}
+.informationright .inforpay{
+    width: 90%;
+    height: 500px;
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    border-radius: 4px;
+    padding: 0;
+}
+.inforpay .formpay{
+
+    width: 100%;
+    height: 500px;
+    border: 2px solid rgb(208, 208, 208);
+    padding-left: 10px;
+}
+.formpay .inputCOD{
+    width: 100%;
+    margin: 0;
+    height: 150px;
+
+    padding: auto;
+    padding-top: 35px;
+
+}
+.inputCOD input[type = "radio"]{
+    float: left;
+}
+.inputCOD .p{
+    float: left;
+    width: 25%;
+    margin: 0;
+    padding: auto;
+    font-size: 15px;
+}
+.inputCOD .imgCOD{
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/cod-tien-mat.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    margin: 0;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 5px;
+
+}
+
+#guide {
+    width: 90%;
+    height: 70px;
+    font-size: 15px;
+    border: 2px dashed red;
+    color: red;
+    padding: 10px;
+
+}
+.formpay .inputBank{
+    width: 100%;
+    margin: 0;
+    height: 150px;
+
+    padding: auto;
+    padding-top: 35px;
+
+}
+.inputBank input[type = "radio"]{
+    float: left;
+}
+.inputBank .p{
+    float: left;
+    width: 25%;
+    margin: 0;
+    padding: auto;
+    font-size: 15px;
+
+}
+.inputBank .imgBank{
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/bank-chuyen-khoan.png);
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    margin: 0;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 5px;
+
+}
+.formpay .inputMomo{
+    width: 100%;
+    margin: 0;
+    height: 200px;
+    padding: auto;
+    padding-top: 35px;
+
+}
+.inputMomo input[type = "radio"]{
+    float: left;
+}
+.inputMomo .p{
+    float: left;
+    width: 11%;
+    margin: 0;
+    padding: auto;
+    font-size: 15px;
+
+}
+.inputMomo .imgMomo{
+    width: 30px;
+    height: 30px;
+
+    margin: -20px;
+    display: inline-block;
+    margin-top: -5px;
+    margin-left: 5px;
+
+}

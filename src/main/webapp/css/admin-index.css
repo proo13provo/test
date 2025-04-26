@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f5;
+}
+
+/* Sidebar */
+#sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    background-color: #343a40;
+    padding-top: 20px;
+}
+
+#sidebar h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.nav-link {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    color: #ced4da;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #495057;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Các thành phần chính */
+.main-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.overview {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}

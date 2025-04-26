@@ -1,0 +1,70 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'war' // Add this line to apply the WAR plugin
+    id "org.hidetake.ssh" version "2.10.1" // Correct plugin version to avoid SSH errors
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    api libs.org.glassfish.jersey.containers.jersey.container.servlet
+    api libs.org.glassfish.jersey.media.jersey.media.json.jackson
+    api libs.org.glassfish.jersey.inject.jersey.cdi2.se
+    api libs.org.jboss.weld.se.weld.se.core
+    api libs.jakarta.servlet.jsp.jstl.jakarta.servlet.jsp.jstl.api
+    api libs.org.glassfish.web.jakarta.servlet.jsp.jstl
+    api libs.com.sun.activation.javax.activation
+    api libs.com.sun.mail.javax.mail
+    api libs.mysql.mysql.connector.java
+    api libs.org.jboss.weld.probe.weld.probe.core
+    api libs.org.mortbay.jetty.jetty.util
+    api libs.com.fasterxml.jackson.core.jackson.databind
+    api libs.org.json.json
+    api libs.com.sun.mail.jakarta.mail
+    api libs.io.jsonwebtoken.jjwt.api
+    api libs.com.google.code.gson.gson
+    api libs.redis.clients.jedis
+    api libs.io.lettuce.lettuce.core
+    api libs.org.apache.logging.log4j.log4j.slf4j.impl
+    runtimeOnly libs.io.jsonwebtoken.jjwt.impl
+    runtimeOnly libs.io.jsonwebtoken.jjwt.jackson
+    testImplementation libs.org.junit.jupiter.junit.jupiter.api
+    testImplementation libs.org.junit.jupiter.junit.jupiter.engine
+    compileOnly libs.jakarta.servlet.jakarta.servlet.api
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+description = 'Shoe'
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Javadoc) {
+    options.encoding = 'UTF-8'
+}
+
+war {
+    webAppDirName = 'src/main/webapp'
+    archiveFileName = 'WebFinall-1.0-SNAPSHOT.war'
+    destinationDirectory = file("$projectDir/app/build/dist")
+}
+
+
+

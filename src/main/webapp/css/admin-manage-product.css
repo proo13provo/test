@@ -1,0 +1,86 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+#sidebar {
+    height: 100vh;
+    background-color: #343a40;
+    padding-top: 20px;
+}
+
+#sidebar h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+
+.nav-link {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    color: #ced4da;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #495057;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.main-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #343a40;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+table td {
+    padding: 8px;
+}
+
+table td:nth-child(1),
+table td:nth-child(2),
+table td:nth-child(3),
+table td:nth-child(4),
+table td:nth-child(5),
+table td:nth-child(6),
+table td:nth-child(7),
+table td:nth-child(8),
+table td:nth-child(9),
+table td:nth-child(10) {
+    width: 150px;
+}
+
+.short-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
