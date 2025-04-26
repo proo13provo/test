@@ -1,24 +1,14 @@
-# Sử dụng image base có JDK, không cần gradle vì ta dùng gradlew
-FROM eclipse-temurin:17-jdk AS build
+# Sử dụng Tomcat 11 với JDK 17 làm base image
+FROM tomcat:11-jdk17
 
-WORKDIR /app
+# Xoá ứng dụng mặc định
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
-# Sao chép toàn bộ project (bao gồm gradlew, gradle folder, build.gradle, settings.gradle, src, ...)
-COPY . .
-
-# Cho phép gradlew thực thi
-RUN chmod +x gradlew
-
-# Chạy build bằng wrapper
-RUN ./gradlew clean build
-
-# Image chạy Tomcat
-FROM tomcat:10.1-jdk17
-
-# Xóa app mặc định
-RUN rm -rf /usr/local/tomcat/webapps/*
-
-# Copy WAR từ stage build
-COPY --from=build /app/build/dist/WebFinall-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
-
+# Copy WAR file từ máy host vào container, giữ tên là WebFinall.war
+COPY src/main/webapp/WEB-INF/WebFinalll.war /usr/local/tomcat/webapps/WebFinalll.war
+#COPY build/libs/WebFinalll.war /usr/local/tomcat/webapps/WebFinalll.war
+# Mở cổng 8080 để truy cập từ bên ngoài
 EXPOSE 8080
+
+# Khởi động Tomcat
+CMD ["catalina.sh", "run"]

@@ -1,23 +1,22 @@
-services:
-  app:
-#    build: .
-    image: hatruong0701/web1:lasted
-    container_name: java-web
-    ports:
-      - "8080:8080"
-    depends_on:
-      - redis
-      - mysql
-    environment:
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
-      - MYSQL_HOST=mysql
-      - MYSQL_PORT=3306
-      - MYSQL_DATABASE=dataweb
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=Passnhutren1
 
- redis:
+
+services:
+  # MySQL service
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Passnhutren1        # Mật khẩu root của MySQL
+      MYSQL_DATABASE: dataweb                   # Tên cơ sở dữ liệu
+    ports:
+      - "3306:3306"                             # Mở cổng MySQL ra ngoài
+    volumes:
+      - ./Dump2025:/docker-entrypoint-initdb.d  # Đảm bảo dữ liệu được khôi phục từ dump.sql
+    networks:
+      - webnet
+
+  # Redis service
+  redis:
     image: redis:latest
     container_name: redis
     ports:
@@ -25,20 +24,21 @@ services:
     environment:
       - REDIS_PASSWORD=65906590                # Nếu Redis yêu cầu mật khẩu
     networks:
+      - webnet
 
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
-    restart: always
-    command: --lower_case_table_names=1
-    environment:
-      - MYSQL_DATABASE=dataweb
-      - MYSQL_ROOT_PASSWORD=Passnhutren1
+  # Web application service
+  web:
+    build:
+      context: .                                # Dockerfile nằm trong thư mục gốc của dự án
+    container_name: webapp
     ports:
-      - "3307:3306"  # ánh xạ 3307 trên máy sang 3306 trong container
-    volumes:
-      - mysql-data:/var/lib/mysql
-      - ./Dump2025:/docker-entrypoint-initdb.d
-volumes:
-  redis-data:
-  mysql-data:
+      - "80:8080"                            # Mở cổng của ứng dụng web
+    depends_on:
+      - mysql                                   # Đảm bảo MySQL khởi động trước
+      - redis                                   # Đảm bảo Redis khởi động trước
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge

@@ -2,7 +2,6 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'war' // Add this line to apply the WAR plugin
-    id "org.hidetake.ssh" version "2.10.1" // Correct plugin version to avoid SSH errors
 }
 
 repositories {
@@ -52,18 +51,10 @@ publishing {
     }
 }
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-tasks.withType(Javadoc) {
-    options.encoding = 'UTF-8'
-}
 
 war {
     webAppDirName = 'src/main/webapp'
-    archiveFileName = 'WebFinall-1.0-SNAPSHOT.war'
-    destinationDirectory = file("$projectDir/app/build/dist")
+    archiveFileName = 'WebFinalll.war'
 }
 
 
